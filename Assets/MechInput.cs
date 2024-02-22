@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MechInput : UnitInput, IMovement, IAction, IInteraction
 {
-    CommandManager commandManager;
+   
 
-    public MechInput()
+    public MechInput() : base()
     {
-        commandManager = new();
+       
     }
 
     public void MoveUp()
@@ -41,6 +41,41 @@ public class MechInput : UnitInput, IMovement, IAction, IInteraction
         {
             commandManager.moveRight();
 
+        }
+    }
+    public void FirePrimary()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            commandManager.firePrimary();
+        }
+    }
+    public void FireSecondary()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            commandManager.fireSecondary();
+        }
+    }
+    public void SwitchMode()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            commandManager.switchMode();
+        }
+    }
+    public void ChangeArmor()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            commandManager.changeArmor();
+        }
+    }
+    public void Interact()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            commandManager.interact();
         }
     }
 }

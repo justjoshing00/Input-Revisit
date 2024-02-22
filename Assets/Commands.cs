@@ -6,50 +6,50 @@ public class Commands
 {
     public void MoveUp()
     {
-        Debug.Log("blehpop");
+        Debug.Log("moved up");
     }
     public void MoveDown()
     {
-        Debug.Log("bpklgop");
+        Debug.Log("moved down");
     }
     public void MoveLeft()
     {
-        Debug.Log("bleh");
+        Debug.Log("moved left");
     }
     public void MoveRight()
     {
-        Debug.Log("blehpopvjkf");
+        Debug.Log("moved right");
     }
-    void FirePrimary()
+    public void FirePrimary()
     {
-
+        Debug.Log("Primary weapon fired");
     }
-    void FireSecondary()
+    public void FireSecondary()
     {
-
+        Debug.Log("Secondary weapon fired");
     }
-    void SwitchMode()
+    public void SwitchMode()
     {
-
+        Debug.Log("mode switched");
     }
-    void ChangeArmor()
+    public void ChangeArmor()
     {
-
+        Debug.Log("armortype changed");
     }
-    void Interact()
+    public void Interact()
     {
-
+        Debug.Log("interacted with gameobject");
     }
-    void EndTurn()
+    public void EndTurn()
     {
-
+        Debug.Log("turn ended");
     }
-    void ViewObjectives()
+    public void ViewObjectives()
     {
-
+        Debug.Log("opened objectives screen");
     }
-    void Pause()
+    public void Pause()
     {
-
+        Debug.Log("game paused");
     }
 }
