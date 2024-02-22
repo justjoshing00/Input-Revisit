@@ -8,6 +8,7 @@ public interface IMovement
     {
         Debug.Log("word up");
     }
+   
     public void MoveDown()
     {
         Debug.Log("word down");

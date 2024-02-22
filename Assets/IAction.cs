@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAction : MonoBehaviour
+public interface IAction
 {
-    // Start is called before the first frame update
-    void Start()
+    void FirePrimary()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void FireSecondary()
     {
-        
+
     }
+
+    void SwitchMode()
+    {
+
+    }
+
+    void ChangeArmor()
+    {
+
+    }
+
 }
