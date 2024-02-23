@@ -5,4 +5,5 @@ using UnityEngine;
 public class OtherGameInput:GlobalInput
 {
     //input for noncombat, non system-level actions
+    
 }

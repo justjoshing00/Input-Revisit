@@ -5,8 +5,14 @@ using UnityEngine;
 public class GlobalInput:Input
 {
     //system-level actions
+    private CommandManager commandManager = new();
+   
     public void Pause()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            commandManager.pause();
+        }
+        
     }
 }
