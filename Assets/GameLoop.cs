@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class GameLoop : MonoBehaviour
 {
-    //TODO: "for all units that implement movement/action/interaction, call F()"
-    //TODO: create some mechanism for indirectly calling functions (service locator, probably)
-    MechInput MI;
-    TankInput TI;
-    SoldierInput SI;
+
+    
+    MechInput MI = new();
+    TankInput TI = new();
+    SoldierInput SI = new();
+
+    List<IMovement> Movers;
+    List<IAction> Actors;
+    List<IInteraction> Interactors;
 
     // Start is called before the first frame update
     void Start()
     {
-        MI = new();
-        TI = new();
-        SI = new();
+        Movers = new List<IMovement> { MI, TI, SI };
+        Actors = new List<IAction> { MI, TI, SI };
+        Interactors = new List<IInteraction> { MI, TI, SI };
     }
 
     // Update is called once per frame
@@ -31,55 +35,34 @@ public class GameLoop : MonoBehaviour
 
     void ExecuteInput()
     {
-        ((IMovement)MI).MoveUp();
-        ((IMovement)MI).MoveDown();
-        ((IMovement)MI).MoveLeft();
-        ((IMovement)MI).MoveRight();
 
-        ((IAction)MI).FirePrimary();
-        ((IAction)MI).FireSecondary();
-        ((IAction)MI).ChangeArmor();
-        ((IAction)MI).SwitchMode();
-
-        ((IInteraction)MI).Interact();
+        foreach (IMovement mover in Movers)
+        {
+            mover.MoveUp();
+            mover.MoveDown();
+            mover.MoveLeft();
+            mover.MoveRight();
+        }
+        foreach (IAction actor in Actors)
+        {
+            actor.FirePrimary();
+            actor.FireSecondary();
+            actor.SwitchMode();
+            actor.ChangeArmor();
+        }
+        foreach (IInteraction interactor in Interactors)
+        {
+            interactor.Interact();
+        }
 
         MI.EndTurn();
+        SI.EndTurn();
+        TI.EndTurn();
+
         MI.ViewObjectives();
+        SI.ViewObjectives();
+        TI.ViewObjectives();
 
-        MI.Pause();
 
-        //((IMovement)TI).MoveUp();
-        //((IMovement)TI).MoveDown();
-        //((IMovement)TI).MoveLeft();
-        //((IMovement)TI).MoveRight();
-
-        //((IAction)TI).FirePrimary();
-        //((IAction)TI).FireSecondary();
-        //((IAction)TI).ChangeArmor();
-        //((IAction)TI).SwitchMode();
-
-        //((IInteraction)TI).Interact();
-
-        //TI.EndTurn();
-        //TI.ViewObjectives();
-
-        //TI.Pause();
-
-        //((IMovement)SI).MoveUp();
-        //((IMovement)SI).MoveDown();
-        //((IMovement)SI).MoveLeft();
-        //((IMovement)SI).MoveRight();
-
-        //((IAction)SI).FirePrimary();
-        //((IAction)SI).FireSecondary();
-        //((IAction)SI).ChangeArmor();
-        //((IAction)SI).SwitchMode();
-
-        //((IInteraction)SI).Interact();
-
-        //SI.EndTurn();
-        //SI.ViewObjectives();
-
-        //SI.Pause();
     }
 }

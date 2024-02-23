@@ -12,7 +12,4 @@ commandmanger
 without going through input (end turn is the most obvious example for needing that)
 
 TODO:
--Fix GameLoop so that a call to ExecuteMovement calls the moveX functions on all interfaces that implement movement
--look at splitting commands into different kinds of commands
--Make a final decision about this inheritance heiarchy for input
 -Conform to C# naming conventions
