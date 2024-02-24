@@ -17,14 +17,14 @@ public class UnitInput: GlobalInput
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            commandManager.endTurn();
+            commandManager.EndTurn();
         }
     }
     public void ViewObjectives()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            commandManager.viewObjectives();
+            commandManager.ViewObjectives();
         }
     }
 }

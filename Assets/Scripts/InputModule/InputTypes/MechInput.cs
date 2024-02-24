@@ -15,7 +15,7 @@ public class MechInput : UnitInput, IMovement, IAction, IInteraction
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            commandManager.moveUp();
+            commandManager.MoveUp();
 
         }
     }
@@ -23,7 +23,7 @@ public class MechInput : UnitInput, IMovement, IAction, IInteraction
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            commandManager.moveDown();
+            commandManager.MoveDown();
 
         }
     }
@@ -31,7 +31,7 @@ public class MechInput : UnitInput, IMovement, IAction, IInteraction
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            commandManager.moveLeft();
+            commandManager.MoveLeft();
 
         }
     }
@@ -39,7 +39,7 @@ public class MechInput : UnitInput, IMovement, IAction, IInteraction
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            commandManager.moveRight();
+            commandManager.MoveRight();
 
         }
     }
@@ -47,35 +47,35 @@ public class MechInput : UnitInput, IMovement, IAction, IInteraction
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            commandManager.firePrimary();
+            commandManager.FirePrimary();
         }
     }
     public void FireSecondary()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            commandManager.fireSecondary();
+            commandManager.FireSecondary();
         }
     }
     public void SwitchMode()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            commandManager.switchMode();
+            commandManager.SwitchMode();
         }
     }
     public void ChangeArmor()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            commandManager.changeArmor();
+            commandManager.ChangeArmor();
         }
     }
     public void Interact()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            commandManager.interact();
+            commandManager.Interact();
         }
     }
 }

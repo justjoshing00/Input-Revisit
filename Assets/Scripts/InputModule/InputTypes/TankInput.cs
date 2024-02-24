@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoldierInput : UnitInput, IMovement,IAction,IInteraction
+public class TankInput : UnitInput, IMovement,IAction,IInteraction
 {
-    public SoldierInput() : base()
+    public TankInput() : base()
     {
 
     }
@@ -13,7 +13,7 @@ public class SoldierInput : UnitInput, IMovement,IAction,IInteraction
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            commandManager.moveUp();
+            commandManager.MoveUp();
 
         }
     }
@@ -21,7 +21,7 @@ public class SoldierInput : UnitInput, IMovement,IAction,IInteraction
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            commandManager.moveDown();
+            commandManager.MoveDown();
 
         }
     }
@@ -29,7 +29,7 @@ public class SoldierInput : UnitInput, IMovement,IAction,IInteraction
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            commandManager.moveLeft();
+            commandManager.MoveLeft();
 
         }
     }
@@ -37,7 +37,7 @@ public class SoldierInput : UnitInput, IMovement,IAction,IInteraction
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            commandManager.moveRight();
+            commandManager.MoveRight();
 
         }
     }
@@ -45,35 +45,35 @@ public class SoldierInput : UnitInput, IMovement,IAction,IInteraction
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            commandManager.firePrimary();
+            commandManager.FirePrimary();
         }
     }
     public void FireSecondary()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            commandManager.fireSecondary();
+            commandManager.FireSecondary();
         }
     }
     public void SwitchMode()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            commandManager.switchMode();
+            commandManager.SwitchMode();
         }
     }
     public void ChangeArmor()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            commandManager.changeArmor();
+            commandManager.ChangeArmor();
         }
     }
     public void Interact()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            commandManager.interact();
+            commandManager.Interact();
         }
     }
 }

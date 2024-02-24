@@ -11,7 +11,7 @@ public class GlobalInput:Input
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            commandManager.pause();
+            commandManager.Pause();
         }
         
     }
